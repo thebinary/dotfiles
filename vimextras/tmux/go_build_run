@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#tmux send-keys -t :.+ "go build $1.go" Enter
+#tmux send-keys -t :.+ "$1" Enter
+tmux send-keys -t :.+ "go run $1.go" Enter
