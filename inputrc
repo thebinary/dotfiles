@@ -1,0 +1,23 @@
+set completion-ignore-case On
+set bell-style none
+set completion-map-case on
+set expand-tilde On
+set menu-complete-display-prefix On
+set show-mode-in-prompt On
+set colored-stats  On
+set visible-stats On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set input-meta on
+set convert-meta off
+set output-meta on
+set completion-query-items 500
+
+#"?": complete
+"\C-x\"": "\"\"\C-b"
+"\C-xq": "\eb\"\ef\""
+"\C-xr": redraw-current-line
+"\M-.": yank-last-arg
+#"\e\e[A": "cd ..\n"
+#"\e\e[B": "cd -\n"
+"\e\e[f": "wl"
