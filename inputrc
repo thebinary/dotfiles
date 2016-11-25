@@ -3,7 +3,7 @@ set bell-style none
 set completion-map-case on
 set expand-tilde On
 set menu-complete-display-prefix On
-set show-mode-in-prompt On
+#set show-mode-in-prompt On
 set colored-stats  On
 set visible-stats On
 set show-all-if-ambiguous On
