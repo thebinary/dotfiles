@@ -1,0 +1,4 @@
+# emacs tmp files
+*~
+# Mac OS ds store files
+.DS_Store

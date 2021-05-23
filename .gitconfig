@@ -1,0 +1,14 @@
+[user]
+	name = thebinary
+	email = binary4bytes@gmail.com
+[core]
+	excludesfile = ~/.config/git/gitignore_global
+[alias]
+	ls = log --oneline
+	lr = log --oneline --raw
+	lg = log --oneline --graph
+	stls = stash list
+	raw = log --raw
+	graph = log --graph
+	rem = remote -v
+	h = help
