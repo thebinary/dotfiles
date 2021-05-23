@@ -309,12 +309,19 @@
 ** [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]]
    Language Server Protocol Mode
 
+   LSP Mode hook
+   #+begin_src emacs-lisp
+     (defun tb/lsp-mode-init ()
+       (lsp-headerline-breadcrumb-mode)
+       (lsp-enable-which-key-integration))
+   #+end_src
+
    #+begin_src emacs-lisp
      (use-package lsp-mode
        :init
        ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
        (setq lsp-keymap-prefix "C-c l")
-       :hook ((lsp-mode . lsp-enable-which-key-integration))
+       :hook ((lsp-mode . tb/lsp-mode-init))
        :commands (lsp lsp-deferred))
    #+end_src
 ** Docker
