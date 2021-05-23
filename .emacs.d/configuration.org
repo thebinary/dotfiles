@@ -309,3 +309,9 @@
    (use-package dockerfile-mode
    :ensure t)
    #+end_src
+* Other Major Modes
+** [[https://github.com/NixOS/nixpkgs][NIX]]
+   #+begin_src emacs-lisp
+     (use-package nix-mode
+       :ensure t)
+   #+end_src
