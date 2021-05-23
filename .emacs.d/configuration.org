@@ -7,14 +7,14 @@
    #+begin_src emacs-lisp
      (defun tb/config-regen ()
 	 (interactive)
-	 (org-babel-tangle-file (expand-file-name "~/.emacs.d/configuration.org")))
+	 (org-babel-tangle-file (expand-file-name "~/dotfiles/.emacs.d/configuration.org")))
    #+end_src
 
    Hook to automatically tangle customize.org file when we save it
    #+begin_src emacs-lisp
      (defun tb/config-save-hook ()
 	 (when (string-equal (buffer-file-name)
-			     (expand-file-name "~/.emacs.d/configuration.org"))
+			     (expand-file-name "~/dotfiles/.emacs.d/configuration.org"))
 	   ;; disable babel confirmation message
 	   (let ((org-confirm-babel-evaluate nil))
 	     (org-babel-tangle))))
