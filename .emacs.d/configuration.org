@@ -80,6 +80,8 @@
    Rainbow delimiters
    #+begin_src emacs-lisp
      (use-package rainbow-delimiters
+       :ensure t
+       :config (rainbow-delimiters-mode)
        :hook (prog-mode . rainbow-delimiters-mode))
    #+end_src
 ** Basic
