@@ -306,6 +306,17 @@
       :config (counsel-projectile-mode))
   #+end_src
 * Development
+** [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]]
+   Language Server Protocol Mode
+
+   #+begin_src emacs-lisp
+     (use-package lsp-mode
+       :init
+       ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+       (setq lsp-keymap-prefix "C-c l")
+       :hook ((lsp-mode . lsp-enable-which-key-integration))
+       :commands (lsp lsp-deferred))
+   #+end_src
 ** Docker
    #+begin_src emacs-lisp
    (use-package dockerfile-mode
