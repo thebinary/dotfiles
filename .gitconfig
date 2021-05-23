@@ -4,6 +4,10 @@
 [core]
 	excludesfile = ~/.config/git/gitignore_global
 [alias]
+	s = status --short --branch
+	d = diff
+	ds = diff --shortstat
+	sh = show --oneline
 	ls = log --oneline
 	lr = log --oneline --raw
 	lg = log --oneline --graph
