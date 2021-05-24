@@ -328,6 +328,31 @@
        :hook ((lsp-mode . tb/lsp-mode-init))
        :commands (lsp lsp-deferred))
    #+end_src
+** Company Mode
+   #+begin_src emacs-lisp
+     (use-package company
+       :ensure t
+       :config
+       (setq company-idle-delay 0)
+       (setq company-minimum-prefix-length 1)
+       (setq lsp-completion-provider :capf))
+   #+end_src
+** Languages
+*** Elisp
+    #+begin_src emacs-lisp
+      (defun tb/emacs-lisp-mode-hook ()
+	(company-mode t))
+
+      (add-hook 'emacs-lisp-mode-hook 'tb/emacs-lisp-mode-hook)
+    #+end_src
+*** Python
+    #+begin_src emacs-lisp
+      (defun tb/python-mode-hook ()
+	(setq python-shell-interpreter "python3")
+	(company-mode))
+
+      (add-hook 'python-mode-hook 'tb/python-mode-hook)
+    #+end_src
 ** Docker
    #+begin_src emacs-lisp
    (use-package dockerfile-mode
