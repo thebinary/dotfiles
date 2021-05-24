@@ -151,8 +151,9 @@
    
    Get old easy templates work again. Disabled by default since Org 9.2
    #+begin_src emacs-lisp
-     (require 'org-tempo)
-     (add-to-list 'org-modules 'org-tempo)
+     (use-package org-tempo
+       :config
+       (add-to-list 'org-modules 'org-tempo))
    #+end_src
 
    Add some structure templates
