@@ -211,6 +211,10 @@
      ;; define org-mode-map key to start and end presentations
      (define-key org-mode-map (kbd "C-;") 'org-tree-slide-mode)
    #+end_src
+** Source Code
+   #+begin_src emacs-lisp
+     (define-key org-mode-map (kbd "C-=") 'org-edit-src-code)
+   #+end_src
 * Helpers
 ** Which key
    #+begin_src emacs-lisp
