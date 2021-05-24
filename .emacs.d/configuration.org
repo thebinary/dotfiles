@@ -290,6 +290,12 @@
     (use-package magit
       :ensure t)
   #+end_src
+* [[https://github.com/emacs-evil/evil][Evil Mode]]
+  #+begin_src emacs-lisp
+    (use-package evil
+      :ensure t
+      :hook ((prog-mode . evil-mode)))
+  #+end_src
 * [[https://github.com/bbatsov/projectile][Projectile]]
   #+begin_src emacs-lisp
     (use-package projectile
