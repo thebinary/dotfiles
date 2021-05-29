@@ -9,6 +9,8 @@
     tmux
     tmux-xpanes
     fzf
+    fd
+    ag
     bat
     jq
     asciinema
