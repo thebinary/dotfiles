@@ -231,7 +231,13 @@
 ** Helpful
    #+begin_src emacs-lisp
      (use-package helpful
-       :ensure t)
+       :ensure t
+       :bind (("C-h f" . helpful-callable)
+	      ("C-h v" . helpful-variable)
+	      ("C-h k" . helpful-key)
+	      ("C-h F" . helpful-function)
+	      ("C-h C" . helpful-command)
+	      ("C-c C-d" . helpful-at-point)))
    #+end_src
 * Miscellenous
 ** Serch using [[Https://github.com/hrs/engine-mode][Engine Mode]]
