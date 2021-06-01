@@ -60,7 +60,6 @@
     kubectl
   
     # Networking Utils
-    telnet
     nmap
     tor
 
