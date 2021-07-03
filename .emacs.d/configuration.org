@@ -1,6 +1,17 @@
 #+TITLE: Emacs Configuration
 #+PROPERTY: header-args:emacs-lisp :tangle ~/.emacs.d/configuration.el
 
+* Startup
+  #+begin_src emacs-lisp
+    (defun tb/display-startup-time ()
+      (message "Loaded in %s with %d garbage collections."
+	       (format "%.2f seconds"
+		       (float-time
+			(time-subtract after-init-time before-init-time)))
+	       gcs-done))
+
+    (add-hook 'emacs-startup-hook #'tb/display-startup-time)
+  #+end_src
 * Functions
 ** Configuration
    Regenerate the configuration.el.
