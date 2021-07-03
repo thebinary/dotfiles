@@ -312,6 +312,27 @@
 	      ("<f2> u" . counsel-unicode-char)
 	      ))
    #+end_src
+** Ace Jump
+   #+begin_src emacs-lisp
+     (use-package ace-jump-mode
+       :bind ("C-c C-SPC" . ace-jump-mode))
+   #+end_src
+** Direnv
+   #+begin_src emacs-lisp
+     (use-package direnv
+       :config
+       (direnv-mode))
+   #+end_src
+** [[https://github.com/joaotavora/yasnippet][Yasnippet]]
+   #+begin_src emacs-lisp
+     (use-package yasnippet
+       :config
+       (add-hook 'prog-mode-hook #'yas-minor-mode))
+   #+end_src
+** Hide Lines
+   #+begin_src emacs-lisp
+   (use-package hide-lines)
+   #+end_src
 * Magit
   [[https://magit.vc/manual/magit.html][Magit User Manual]]
   #+begin_src emacs-lisp
