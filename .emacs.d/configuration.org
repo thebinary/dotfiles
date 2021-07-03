@@ -473,5 +473,9 @@
 	(load (expand-file-name "work-ssh"))
 	(load (expand-file-name "xen-cluster"))))
   #+end_src
+* Auth
+  #+begin_src emacs-lisp
+    (setq auth-sources '("~/.lconf/emacs/secrets/.authinfo.gpg"))
+  #+end_src
 * Thanks To
   - [[https://github.com/daviwil/emacs-from-scratch][davilwil: Emacs From Scratch]]
