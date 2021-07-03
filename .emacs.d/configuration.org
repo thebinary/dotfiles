@@ -361,17 +361,34 @@
 
   #+begin_src emacs-lisp
     (use-package counsel-projectile
-      :ensure t
       :config (counsel-projectile-mode))
   #+end_src
 * Development
-** [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]]
+** Flycheck
+   #+begin_src emacs-lisp
+     (use-package flycheck
+       :hook ((go-mode . flycheck-mode)))
+
+     (use-package flycheck-pos-tip
+       :hook ((flycheck-mode . flycheck-pos-tip-mode)))
+   #+end_src
+** [[https://github.com/joaotavora/eglot][Eglot (LSP Client)]]
+   #+begin_src emacs-lisp
+     (defun tb/eglot-format-buffer-on-save()
+       (add-hook 'before-save-hook #'eglot-format-buffer -10 t))
+
+     (use-package eglot)
+       ;; :hook ((go-mode . eglot-ensure))
+       ;; :config
+       ;; (add-hook 'go-mode-hook #'tb/eglot-format-buffer-on-save))
+   #+end_src
+** TODO: [[https://emacs-lsp.github.io/lsp-mode/][LSP Mode]]
    Language Server Protocol Mode
 
    LSP Mode hook
    #+begin_src emacs-lisp
      (defun tb/lsp-mode-init ()
-       (lsp-headerline-breadcrumb-mode)
+       ;; (lsp-headerline-breadcrumb-mode)
        (lsp-enable-which-key-integration))
    #+end_src
 
@@ -380,17 +397,25 @@
        :init
        ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
        (setq lsp-keymap-prefix "C-c l")
-       :hook ((lsp-mode . tb/lsp-mode-init))
-       :commands (lsp lsp-deferred))
+       ;; :hook ((go-mode . lsp-deferred))
+       :commands (lsp))
+
+     ;; (use-package lsp-ui)
    #+end_src
 ** Company Mode
    #+begin_src emacs-lisp
      (use-package company
-       :ensure t
        :config
        (setq company-idle-delay 0)
-       (setq company-minimum-prefix-length 1)
-       (setq lsp-completion-provider :capf))
+       (setq company-minimum-prefix-length 1))
+       ;; (setq lsp-completion-provider :capf))
+   #+end_src
+
+   Company Mode with icons: [[https://github.com/sebastiencs/company-box/][Company Box]]
+   #+begin_src emacs-lisp
+     (use-package company-box)
+     ;; Not working with eglot
+       ;; :hook (company-mode . company-box-mode))
    #+end_src
 ** Languages
 *** Elisp
