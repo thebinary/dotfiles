@@ -348,12 +348,11 @@
 * [[https://github.com/bbatsov/projectile][Projectile]]
   #+begin_src emacs-lisp
     (use-package projectile
-      :ensure t
       :diminish projectile-mode
       :init
       (projectile-mode +1)
       (when (file-directory-p "~/code")
-	(setq projectile-project-search-path '("~/code")))
+	(setq projectile-project-search-path '("~/code" "~/go/src/github.com/thebinary")))
       (setq projectile-switch-project-action #'projectile-dired)
       :bind (:map projectile-mode-map
 		  ("C-c p" . projectile-command-map))
