@@ -35,6 +35,11 @@
 	 (package-refresh-contents)
 	 (package-install 'use-package)))
    #+end_src
+* Load Paths
+  Add path used to store external elisps to emacs load-path
+  #+begin_src emacs-lisp
+    (add-to-list 'load-path "~/.emacs.d/lisp")
+   #+end_src
 * Dired
   Dired Actions to other opened window
   #+begin_src emacs-lisp
