@@ -57,6 +57,8 @@
    #+begin_src emacs-lisp
      ;; Make ESC quit prompts
      (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
+     (load "~/.lconf/emacs/store/keybindings")
    #+end_src
 * Hooks
    customize.org save tangle hook
