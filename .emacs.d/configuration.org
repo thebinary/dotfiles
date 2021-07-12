@@ -470,13 +470,15 @@
 	(normal-top-level-add-subdirs-to-load-path)
 	(load (expand-file-name "xen/xapi"))
 	(load (expand-file-name "netutils/netutils"))
-	(load (expand-file-name "utils/tb-ssh"))))
+	(load (expand-file-name "utils/tb-ssh"))
+	(load (expand-file-name "work/ora-conn"))))
 
     (let ((default-directory "~/.lconf/emacs/store"))
       (progn
 	(load (expand-file-name "vpns"))
 	(load (expand-file-name "work-ssh"))
-	(load (expand-file-name "xen-cluster"))))
+	(load (expand-file-name "xen-cluster"))
+	(load (expand-file-name "wl-dbs"))))
   #+end_src
 * Auth
   #+begin_src emacs-lisp
