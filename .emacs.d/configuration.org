@@ -477,5 +477,10 @@
   #+begin_src emacs-lisp
     (setq auth-sources '("~/.lconf/emacs/secrets/.authinfo.gpg"))
   #+end_src
+* Mail
+  #+begin_src emacs-lisp
+    (add-to-list 'load-path "~/.nix-profile/share/emacs/site-lisp/mu4e/mu4e.el")
+    (use-package mu4e)
+  #+end_src
 * Thanks To
   - [[https://github.com/daviwil/emacs-from-scratch][davilwil: Emacs From Scratch]]
