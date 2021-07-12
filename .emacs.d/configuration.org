@@ -377,6 +377,11 @@
       :config (counsel-projectile-mode))
   #+end_src
 * Development
+** Version Control
+   Disable VC in emacs. I use git and use magit for it.
+   #+begin_src emacs-lisp
+     (setq vc-handled-backends nil)
+   #+end_src
 ** Flycheck
    #+begin_src emacs-lisp
      (use-package flycheck
