@@ -310,9 +310,10 @@
        :config
        (ivy-mode))
 
-     (use-package swiper
-       :config
-       (global-set-key "\C-s" 'swiper))
+     ;; use consult-line instead
+     ;; (use-package swiper
+     ;;   :config
+     ;;   (global-set-key "\C-s" 'swiper))
 
      (use-package counsel
        :bind (("M-x" . counsel-M-x)
@@ -324,6 +325,12 @@
 	      ("<f2> i" . counsel-info-lookup-symbol)
 	      ("<f2> u" . counsel-unicode-char)
 	      ))
+   #+end_src
+** Minibuffer Completion: [[https://github.com/minad/consult][Consult]]
+   #+begin_src emacs-lisp
+     (use-package consult
+       :config
+       (global-set-key "\C-s" 'consult-line))
    #+end_src
 ** Ace Jump
    #+begin_src emacs-lisp
