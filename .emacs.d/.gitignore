@@ -1,5 +1,4 @@
 *
 !.gitignore
-!lisp
 !init.el
 !configuration.org
