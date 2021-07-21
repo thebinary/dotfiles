@@ -66,6 +66,9 @@
     # MacOS Tools
     skhd
     yabai
+
+    # database
+    postgresql
   ];
 
   programs.bat = {
