@@ -558,6 +558,12 @@
     (use-package plsql)
     (use-package sqlplus)
   #+end_src
+
+  #+begin_src emacs-lisp
+    (use-package sql-upcase
+      :hook ((sql-mode . sql-upcase-mode)
+	     (sql-interactive-mode . sql-upcase-mode)))
+  #+end_src
 * Mail
   #+begin_src emacs-lisp
     (add-to-list 'load-path "~/.nix-profile/share/emacs/site-lisp/mu4e")
