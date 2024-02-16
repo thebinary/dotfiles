@@ -1,3 +1,5 @@
+# -*- mode:conf; -*-
+
 :: default : yabai -m config top_padding 5
 
 #####################################################################################################
@@ -13,22 +15,28 @@ yabai < y ; default
 
 # MODE: yabai warp (move)
 :: yabai_w @ : yabai -m config top_padding 100
-yabai < w ; yabai_w
-yabai_w < ctrl - g ; default
-
 # MODE: yabai swap
 :: yabai_s @ : yabai -m config top_padding 100
+
+yabai < w ; yabai_w
+yabai_w < s ; yabai_s
+yabai_w < ctrl - g ; default
+
 yabai < s ; yabai_s
+yabai_s < w ; yabai_w
 yabai_s < ctrl - g ; default
 
 # MODE: yabai mirror
 :: yabai_m @ : yabai -m config top_padding 100
-yabai < m ; yabai_m
-yabai_m < ctrl - g ; default
-
 # MODE: yabai rotate
 :: yabai_r @ : yabai -m config top_padding 100
+
+yabai < m ; yabai_m
+yabai_m < r ; yabai_r
+yabai_m < ctrl - g ; default
+
 yabai < r ; yabai_r
+yabai_r < m ; yabai_m
 yabai_r < ctrl - g ; default
 
 # zoom
