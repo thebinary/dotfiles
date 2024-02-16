@@ -72,10 +72,10 @@ yabai_w < j : yabai -m window --warp south
 yabai_w < k : yabai -m window --warp north
 
 # mirror
-yabai_m < h : yabai -m space --mirror x-axis
-yabai_m < l : yabai -m space --mirror x-axis
-yabai_m < j : yabai -m space --mirror y-axis
-yabai_m < k : yabai -m space --mirror y-axis
+yabai_m < j : yabai -m space --mirror x-axis
+yabai_m < k : yabai -m space --mirror x-axis
+yabai_m < h : yabai -m space --mirror y-axis
+yabai_m < l : yabai -m space --mirror y-axis
 
 # rotate
 yabai_r < r : yabai -m space --rotate 90
