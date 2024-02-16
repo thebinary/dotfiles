@@ -1,0 +1,103 @@
+:: default : yabai -m config top_padding 5
+
+#####################################################################################################
+############################### YABAI MODE AND SHORTCUTS ###########################################
+#####################################################################################################
+
+# MODE: yabai root
+:: yabai @ : yabai -m config top_padding 30
+cmd - y ; yabai
+yabai < ctrl - g ; default
+yabai < cmd - y ; default
+yabai < y ; default
+
+# MODE: yabai warp (move)
+:: yabai_w @ : yabai -m config top_padding 100
+yabai < w ; yabai_w
+yabai_w < ctrl - g ; default
+
+# MODE: yabai swap
+:: yabai_s @ : yabai -m config top_padding 100
+yabai < s ; yabai_s
+yabai_s < ctrl - g ; default
+
+# MODE: yabai mirror
+:: yabai_m @ : yabai -m config top_padding 100
+yabai < m ; yabai_m
+yabai_m < ctrl - g ; default
+
+# MODE: yabai rotate
+:: yabai_r @ : yabai -m config top_padding 100
+yabai < r ; yabai_r
+yabai_r < ctrl - g ; default
+
+# zoom
+# yabai < e : yabai -m window --toggle expose
+yabai < z : yabai -m window --toggle zoom-parent
+yabai < shift - z : yabai -m window --toggle zoom-fullscreen
+
+# change layout of desktop
+yabai < shift - f : yabai -m space --layout bsp
+yabai < f : yabai -m space --layout float
+
+# focus window : yabai < h,j,k,l
+yabai < h : yabai -m window --focus west
+yabai < j : yabai -m window --focus south
+yabai < k : yabai -m window --focus north
+yabai < l : yabai -m window --focus east
+## enable direct command as well because these are frequently used
+cmd - h : yabai -m window --focus west
+cmd - j : yabai -m window --focus south
+cmd - k : yabai -m window --focus north
+cmd - l : yabai -m window --focus east
+
+# swap window: yabai + shift < h,j,k,l
+yabai_s < h : yabai -m window --swap west
+yabai_s < j : yabai -m window --swap south
+yabai_s < k : yabai -m window --swap north
+yabai_s < l : yabai -m window --swap east
+
+# move (warp) window
+yabai_w < h : yabai -m window --warp west
+yabai_w < l : yabai -m window --warp east
+yabai_w < j : yabai -m window --warp south
+yabai_w < k : yabai -m window --warp north
+
+# mirror
+yabai_m < h : yabai -m space --mirror x-axis
+yabai_m < l : yabai -m space --mirror x-axis
+yabai_m < j : yabai -m space --mirror y-axis
+yabai_m < k : yabai -m space --mirror y-axis
+
+# rotate
+yabai_r < r : yabai -m space --rotate 90
+yabai_r < shift - r : yabai -m space --rotate 270
+
+# balance size of windows
+yabai < 0 : yabai -m space --balance
+
+# increase window size
+shift + alt - left  : yabai -m window --resize left:-20:0
+shift + alt - right : yabai -m window --resize right:20:0
+shift + alt - up    : yabai -m window --resize top:0:-20
+shift + alt - down  : yabai -m window --resize bottom:0:20
+
+# decrease window size
+shift + cmd - left  : yabai -m window --resize right:-20:0
+shift + cmd - right : yabai -m window --resize left:20:0
+shift + cmd - up    : yabai -m window --resize bottom:0:-20
+shift + cmd - down  : yabai -m window --resize top:0:20
+
+# stacking
+alt - n : yabai -m window --focus stack.next
+alt - p : yabai -m window --focus stack.prev
+cmd + ctrl - left  : yabai -m window west --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - down  : yabai -m window south --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - up    : yabai -m window north --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - right : yabai -m window east --stack $(yabai -m query --windows --window | jq -r '.id')
+cmd + ctrl - b : yabai -m space --layout bsp
+
+
+#cmd + ctrl - ; : emacsclient --eval '(emacs-everywhere)' cmd
+shift + alt - e : emacsclient --eval '(emacs-everywhere)'
+shift + alt - f : bash "${HOME}"/.config/local/scripts/vpn-connect.sh
